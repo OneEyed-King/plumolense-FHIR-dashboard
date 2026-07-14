@@ -1,0 +1,60 @@
+{
+  "resourceType": "Bundle",
+  "type": "transaction",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:aaaa0001-0000-0000-0000-000000000001",
+      "resource": {
+        "resourceType": "Appointment",
+        "status": "booked",
+        "serviceType": [{ "coding": [{ "system": "http://snomed.info/sct", "code": "394701000", "display": "Asthma follow-up (regime/therapy)" }] }],
+        "reasonCode": [{ "text": "Asthma follow-up" }],
+        "description": "Asthma follow-up - Ezekiel Walter",
+        "start": "2026-07-14T09:00:00-04:00",
+        "end": "2026-07-14T09:30:00-04:00",
+        "participant": [
+          { "actor": { "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a" }, "status": "accepted" },
+          { "actor": { "reference": "Practitioner/1011", "display": "Dr. Linh Nguyen" }, "status": "accepted" },
+          { "actor": { "reference": "Organization/1010" }, "status": "accepted" }
+        ]
+      },
+      "request": { "method": "POST", "url": "Appointment" }
+    },
+    {
+      "fullUrl": "urn:uuid:aaaa0001-0000-0000-0000-000000000002",
+      "resource": {
+        "resourceType": "Appointment",
+        "status": "booked",
+        "serviceType": [{ "coding": [{ "system": "http://snomed.info/sct", "code": "394701000", "display": "Asthma follow-up (regime/therapy)" }], "text": "COPD review" }],
+        "reasonCode": [{ "text": "COPD review" }],
+        "description": "COPD review - Cristobal Montero",
+        "start": "2026-07-14T10:30:00-04:00",
+        "end": "2026-07-14T11:00:00-04:00",
+        "participant": [
+          { "actor": { "reference": "Patient/c86c400e-ff88-a1e3-2e23-caa4d8311f47" }, "status": "accepted" },
+          { "actor": { "reference": "Practitioner/1011", "display": "Dr. Linh Nguyen" }, "status": "accepted" },
+          { "actor": { "reference": "Organization/1010" }, "status": "accepted" }
+        ]
+      },
+      "request": { "method": "POST", "url": "Appointment" }
+    },
+    {
+      "fullUrl": "urn:uuid:aaaa0001-0000-0000-0000-000000000003",
+      "resource": {
+        "resourceType": "Appointment",
+        "status": "booked",
+        "serviceType": [{ "coding": [{ "system": "http://snomed.info/sct", "code": "394701000", "display": "Asthma follow-up (regime/therapy)" }], "text": "Severe asthma follow-up" }],
+        "reasonCode": [{ "text": "Severe allergic asthma follow-up - biologic therapy review" }],
+        "description": "Severe asthma follow-up - Larissa Nikolaus",
+        "start": "2026-07-14T14:00:00-04:00",
+        "end": "2026-07-14T14:30:00-04:00",
+        "participant": [
+          { "actor": { "reference": "Patient/eb5910f1-26e6-bc6f-b300-716eae678d6f" }, "status": "accepted" },
+          { "actor": { "reference": "Practitioner/1011", "display": "Dr. Linh Nguyen" }, "status": "accepted" },
+          { "actor": { "reference": "Organization/1010" }, "status": "accepted" }
+        ]
+      },
+      "request": { "method": "POST", "url": "Appointment" }
+    }
+  ]
+}

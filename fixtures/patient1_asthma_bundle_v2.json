@@ -1,0 +1,4812 @@
+{
+  "resourceType": "Bundle",
+  "type": "transaction",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000101",
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "AMB",
+          "display": "ambulatory"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "394701000",
+                "display": "Asthma follow-up (regime/therapy)"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "participant": [
+          {
+            "individual": {
+              "reference": "Practitioner/1011",
+              "display": "Dr. Linh Nguyen"
+            }
+          }
+        ],
+        "serviceProvider": {
+          "reference": "Organization/1010",
+          "display": "Boston Pulmonary & Sleep Associates"
+        },
+        "period": {
+          "start": "2025-06-14T09:00:00-04:00",
+          "end": "2025-06-14T09:30:00-04:00"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Encounter"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000102",
+      "resource": {
+        "resourceType": "Condition",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-problem-list-item"
+          ]
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item",
+                "display": "Problem List Item"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "195967001",
+              "display": "Asthma (disorder)"
+            }
+          ],
+          "text": "Asthma, moderate persistent"
+        },
+        "subject": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "encounter": {
+          "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000101"
+        },
+        "asserter": {
+          "reference": "Practitioner/1011"
+        },
+        "onsetDateTime": "2016-03-01",
+        "recordedDate": "2025-06-14",
+        "note": [
+          {
+            "text": "Longstanding adult-onset asthma. History of variable adherence to daily controller therapy."
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Condition"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000103",
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "966529",
+              "display": "budesonide 0.09 MG/ACTUAT Dry Powder Inhaler [Pulmicort Flexhaler]"
+            }
+          ],
+          "text": "Budesonide (Pulmicort Flexhaler) 90 mcg - ICS monotherapy"
+        },
+        "subject": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "encounter": {
+          "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000101"
+        },
+        "authoredOn": "2025-06-14",
+        "requester": {
+          "reference": "Practitioner/1011"
+        },
+        "reasonReference": [
+          {
+            "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000102"
+          }
+        ],
+        "dosageInstruction": [
+          {
+            "text": "Inhale 2 puffs by mouth twice daily"
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "MedicationRequest"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000104",
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "2123111",
+              "display": "albuterol 90 MCG/INHAL Metered Dose Inhaler"
+            }
+          ],
+          "text": "Albuterol HFA 90 mcg - rescue inhaler, PRN"
+        },
+        "subject": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "encounter": {
+          "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000101"
+        },
+        "authoredOn": "2025-06-14",
+        "requester": {
+          "reference": "Practitioner/1011"
+        },
+        "reasonReference": [
+          {
+            "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000102"
+          }
+        ],
+        "dosageInstruction": [
+          {
+            "text": "Inhale 2 puffs by mouth every 4-6 hours as needed for wheezing or shortness of breath"
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "MedicationRequest"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000105",
+      "resource": {
+        "resourceType": "Observation",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-blood-pressure"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "85354-9",
+              "display": "Blood pressure panel"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "encounter": {
+          "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000101"
+        },
+        "effectiveDateTime": "2025-06-14T09:10:00-04:00",
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "8480-6",
+                  "display": "Systolic blood pressure"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "value": 118,
+              "unit": "mmHg",
+              "system": "http://unitsofmeasure.org",
+              "code": "mm[Hg]"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "8462-4",
+                  "display": "Diastolic blood pressure"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "value": 76,
+              "unit": "mmHg",
+              "system": "http://unitsofmeasure.org",
+              "code": "mm[Hg]"
+            }
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000106",
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8867-4",
+              "display": "Heart rate"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "encounter": {
+          "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000101"
+        },
+        "effectiveDateTime": "2025-06-14T09:10:00-04:00",
+        "valueQuantity": {
+          "value": 72,
+          "unit": "/min",
+          "system": "http://unitsofmeasure.org",
+          "code": "/min"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000107",
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "9279-1",
+              "display": "Respiratory rate"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "encounter": {
+          "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000101"
+        },
+        "effectiveDateTime": "2025-06-14T09:10:00-04:00",
+        "valueQuantity": {
+          "value": 16,
+          "unit": "/min",
+          "system": "http://unitsofmeasure.org",
+          "code": "/min"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000108",
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8310-5",
+              "display": "Body temperature"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "encounter": {
+          "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000101"
+        },
+        "effectiveDateTime": "2025-06-14T09:10:00-04:00",
+        "valueQuantity": {
+          "value": 36.8,
+          "unit": "Cel",
+          "system": "http://unitsofmeasure.org",
+          "code": "Cel"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000109",
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "59408-5",
+              "display": "Oxygen saturation"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "encounter": {
+          "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000101"
+        },
+        "effectiveDateTime": "2025-06-14T09:10:00-04:00",
+        "valueQuantity": {
+          "value": 98,
+          "unit": "%",
+          "system": "http://unitsofmeasure.org",
+          "code": "%"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000110",
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8302-2",
+              "display": "Body height"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "encounter": {
+          "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000101"
+        },
+        "effectiveDateTime": "2025-06-14T09:10:00-04:00",
+        "valueQuantity": {
+          "value": 175,
+          "unit": "cm",
+          "system": "http://unitsofmeasure.org",
+          "code": "cm"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000111",
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "29463-7",
+              "display": "Body weight"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "encounter": {
+          "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000101"
+        },
+        "effectiveDateTime": "2025-06-14T09:10:00-04:00",
+        "valueQuantity": {
+          "value": 70,
+          "unit": "kg",
+          "system": "http://unitsofmeasure.org",
+          "code": "kg"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000112",
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "39156-5",
+              "display": "Body mass index (BMI)"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "encounter": {
+          "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000101"
+        },
+        "effectiveDateTime": "2025-06-14T09:10:00-04:00",
+        "valueQuantity": {
+          "value": 22.9,
+          "unit": "kg/m2",
+          "system": "http://unitsofmeasure.org",
+          "code": "kg/m2"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000113",
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "20150-9",
+              "display": "FEV1"
+            }
+          ],
+          "text": "FEV1 (spirometry)"
+        },
+        "subject": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "encounter": {
+          "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000101"
+        },
+        "effectiveDateTime": "2025-06-14T09:15:00-04:00",
+        "valueQuantity": {
+          "value": 3.6,
+          "unit": "L",
+          "system": "http://unitsofmeasure.org",
+          "code": "L"
+        },
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "N",
+                "display": "Normal"
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000116",
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "19870-5",
+              "display": "FVC"
+            }
+          ],
+          "text": "FVC (spirometry)"
+        },
+        "subject": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "encounter": {
+          "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000101"
+        },
+        "effectiveDateTime": "2025-06-14T09:15:00-04:00",
+        "valueQuantity": {
+          "value": 4.4,
+          "unit": "L",
+          "system": "http://unitsofmeasure.org",
+          "code": "L"
+        },
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "N",
+                "display": "Normal"
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000114",
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "19926-5",
+              "display": "FEV1/FVC"
+            }
+          ],
+          "text": "FEV1/FVC ratio (spirometry)"
+        },
+        "subject": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "encounter": {
+          "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000101"
+        },
+        "effectiveDateTime": "2025-06-14T09:15:00-04:00",
+        "valueQuantity": {
+          "value": 82,
+          "unit": "%",
+          "system": "http://unitsofmeasure.org",
+          "code": "%"
+        },
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "N",
+                "display": "Normal"
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000117",
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "33452-4",
+              "display": "Peak expiratory flow"
+            }
+          ],
+          "text": "Peak Expiratory Flow (PEF)"
+        },
+        "subject": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "encounter": {
+          "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000101"
+        },
+        "effectiveDateTime": "2025-06-14T09:15:00-04:00",
+        "valueQuantity": {
+          "value": 480,
+          "unit": "L/min",
+          "system": "http://unitsofmeasure.org",
+          "code": "L/min"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000118",
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "survey"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "82668-5",
+              "display": "Total score [ACT]"
+            }
+          ],
+          "text": "Asthma Control Test (ACT) score"
+        },
+        "subject": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "encounter": {
+          "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000101"
+        },
+        "effectiveDateTime": "2025-06-14T09:20:00-04:00",
+        "valueQuantity": {
+          "value": 23,
+          "unit": "{score}",
+          "system": "http://unitsofmeasure.org",
+          "code": "{score}"
+        },
+        "interpretation": [
+          {
+            "text": "Well controlled (score >=20)"
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000115",
+      "resource": {
+        "resourceType": "Observation",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-smokingstatus"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "social-history"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "72166-2",
+              "display": "Tobacco smoking status"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "encounter": {
+          "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000101"
+        },
+        "effectiveDateTime": "2025-06-14T09:10:00-04:00",
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "266919005",
+              "display": "Never smoked tobacco (finding)"
+            }
+          ]
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000119",
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "6690-2",
+              "display": "Leukocytes [#/volume] in Blood by Automated count"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "encounter": {
+          "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000101"
+        },
+        "effectiveDateTime": "2025-06-14T09:25:00-04:00",
+        "valueQuantity": {
+          "value": 7.2,
+          "unit": "10*3/uL",
+          "system": "http://unitsofmeasure.org",
+          "code": "10*3/uL"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000120",
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "718-7",
+              "display": "Hemoglobin [Mass/volume] in Blood"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "encounter": {
+          "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000101"
+        },
+        "effectiveDateTime": "2025-06-14T09:25:00-04:00",
+        "valueQuantity": {
+          "value": 14.5,
+          "unit": "g/dL",
+          "system": "http://unitsofmeasure.org",
+          "code": "g/dL"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000121",
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "4544-3",
+              "display": "Hematocrit [Volume Fraction] of Blood by Automated count"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "encounter": {
+          "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000101"
+        },
+        "effectiveDateTime": "2025-06-14T09:25:00-04:00",
+        "valueQuantity": {
+          "value": 43,
+          "unit": "%",
+          "system": "http://unitsofmeasure.org",
+          "code": "%"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000122",
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "777-3",
+              "display": "Platelets [#/volume] in Blood by Automated count"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "encounter": {
+          "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000101"
+        },
+        "effectiveDateTime": "2025-06-14T09:25:00-04:00",
+        "valueQuantity": {
+          "value": 250,
+          "unit": "10*3/uL",
+          "system": "http://unitsofmeasure.org",
+          "code": "10*3/uL"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000123",
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "711-2",
+              "display": "Eosinophils [#/volume] in Blood by Automated count"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "encounter": {
+          "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000101"
+        },
+        "effectiveDateTime": "2025-06-14T09:25:00-04:00",
+        "valueQuantity": {
+          "value": 300,
+          "unit": "/uL",
+          "system": "http://unitsofmeasure.org",
+          "code": "/uL"
+        },
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "N",
+                "display": "Normal"
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000124",
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "19113-0",
+              "display": "IgE [Units/volume] in Serum or Plasma"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "encounter": {
+          "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000101"
+        },
+        "effectiveDateTime": "2025-06-14T09:25:00-04:00",
+        "valueQuantity": {
+          "value": 145,
+          "unit": "IU/mL",
+          "system": "http://unitsofmeasure.org",
+          "code": "[IU]/mL"
+        },
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "H",
+                "display": "High"
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000130",
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0074",
+                "code": "PUL",
+                "display": "Pulmonary"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "text": "Pulmonary Function Test (Spirometry)"
+        },
+        "subject": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "encounter": {
+          "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000101"
+        },
+        "effectiveDateTime": "2025-06-14T09:15:00-04:00",
+        "issued": "2025-06-14T09:30:00-04:00",
+        "performer": [
+          {
+            "reference": "Practitioner/1011"
+          }
+        ],
+        "result": [
+          {
+            "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000113"
+          },
+          {
+            "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000116"
+          },
+          {
+            "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000114"
+          },
+          {
+            "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000117"
+          }
+        ],
+        "conclusion": "Spirometry within normal limits. FEV1 3.6L (100% baseline), FEV1/FVC 82%. No airflow obstruction at this visit."
+      },
+      "request": {
+        "method": "POST",
+        "url": "DiagnosticReport"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000131",
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0074",
+                "code": "RAD",
+                "display": "Radiology"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "36643-5",
+              "display": "XR Chest 2 Views"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "encounter": {
+          "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000101"
+        },
+        "effectiveDateTime": "2025-06-14T09:30:00-04:00",
+        "issued": "2025-06-14T11:00:00-04:00",
+        "performer": [
+          {
+            "reference": "Organization/1010"
+          }
+        ],
+        "conclusion": "No acute cardiopulmonary process. Lungs mildly hyperinflated. No focal infiltrate, effusion, or pneumothorax. Findings compatible with reactive airway disease; no evidence of pneumonia."
+      },
+      "request": {
+        "method": "POST",
+        "url": "DiagnosticReport"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000132",
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0074",
+                "code": "HM",
+                "display": "Hematology"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "58410-2",
+              "display": "CBC panel - Blood by Automated count"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "encounter": {
+          "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000101"
+        },
+        "effectiveDateTime": "2025-06-14T09:25:00-04:00",
+        "issued": "2025-06-14T12:00:00-04:00",
+        "result": [
+          {
+            "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000119"
+          },
+          {
+            "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000120"
+          },
+          {
+            "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000121"
+          },
+          {
+            "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000122"
+          },
+          {
+            "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000123"
+          }
+        ],
+        "conclusion": "CBC within normal limits. Mildly elevated total IgE (145 IU/mL) consistent with mild allergic component; eosinophils within normal range."
+      },
+      "request": {
+        "method": "POST",
+        "url": "DiagnosticReport"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000140",
+      "resource": {
+        "resourceType": "Composition",
+        "status": "final",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "11506-3",
+              "display": "Progress note"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://loinc.org",
+                "code": "11506-3",
+                "display": "Progress note"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "encounter": {
+          "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000101"
+        },
+        "date": "2025-06-14T09:30:00-04:00",
+        "author": [
+          {
+            "reference": "Practitioner/1011",
+            "display": "Dr. Linh Nguyen"
+          }
+        ],
+        "title": "Asthma Follow-up - Routine Visit",
+        "section": [
+          {
+            "title": "Subjective",
+            "text": {
+              "status": "generated",
+              "div": "<div xmlns='http://www.w3.org/1999/xhtml'>Patient reports asthma well-controlled on current regimen. Denies nocturnal symptoms, rescue inhaler use averages less than twice weekly. No recent ED visits or hospitalizations. Never smoker.</div>"
+            }
+          },
+          {
+            "title": "Objective",
+            "text": {
+              "status": "generated",
+              "div": "<div xmlns='http://www.w3.org/1999/xhtml'>VS: BP 118/76, HR 72, RR 16, SpO2 98% RA, Temp 36.8C. Lungs clear to auscultation bilaterally, no wheeze. Spirometry: FEV1 3.6L, FVC 4.4L, FEV1/FVC 82% (normal). PEF 480 L/min. ACT score 23 (well controlled). CXR: no acute process, mild hyperinflation.</div>"
+            }
+          },
+          {
+            "title": "Assessment",
+            "text": {
+              "status": "generated",
+              "div": "<div xmlns='http://www.w3.org/1999/xhtml'>Asthma, moderate persistent, well controlled on ICS monotherapy.</div>"
+            }
+          },
+          {
+            "title": "Plan",
+            "text": {
+              "status": "generated",
+              "div": "<div xmlns='http://www.w3.org/1999/xhtml'>Continue budesonide (Pulmicort) 90mcg 2 puffs BID. Continue albeuterol PRN. Routine follow-up in 6-12 months, sooner if symptoms worsen. Reviewed inhaler technique.</div>"
+            }
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Composition"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000201",
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "EMER",
+          "display": "emergency"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "183478001",
+                "display": "Emergency hospital admission for asthma (procedure)"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "period": {
+          "start": "2026-02-14T22:10:00-05:00",
+          "end": "2026-02-15T01:30:00-05:00"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Encounter"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000202",
+      "resource": {
+        "resourceType": "Condition",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-encounter-diagnosis"
+          ]
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "195949008",
+              "display": "Acute exacerbation of asthma"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "encounter": {
+          "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000201"
+        },
+        "onsetDateTime": "2026-02-14T22:10:00-05:00",
+        "abatementDateTime": "2026-02-17T10:00:00-05:00",
+        "recordedDate": "2026-02-14"
+      },
+      "request": {
+        "method": "POST",
+        "url": "Condition"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000220",
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "status": "completed",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "198145",
+              "display": "prednisone 10 MG Oral Tablet"
+            }
+          ],
+          "text": "Prednisone burst for asthma exacerbation"
+        },
+        "subject": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "encounter": {
+          "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000201"
+        },
+        "authoredOn": "2026-02-14",
+        "reasonReference": [
+          {
+            "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000202"
+          }
+        ],
+        "dosageInstruction": [
+          {
+            "text": "Take 4 tablets (40 mg) by mouth once daily for 5 days"
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "MedicationRequest"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000203",
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8867-4",
+              "display": "Heart rate"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "encounter": {
+          "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000201"
+        },
+        "effectiveDateTime": "2026-02-14T22:15:00-05:00",
+        "valueQuantity": {
+          "value": 112,
+          "unit": "/min",
+          "system": "http://unitsofmeasure.org",
+          "code": "/min"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000204",
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "9279-1",
+              "display": "Respiratory rate"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "encounter": {
+          "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000201"
+        },
+        "effectiveDateTime": "2026-02-14T22:15:00-05:00",
+        "valueQuantity": {
+          "value": 26,
+          "unit": "/min",
+          "system": "http://unitsofmeasure.org",
+          "code": "/min"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000205",
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "59408-5",
+              "display": "Oxygen saturation"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "encounter": {
+          "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000201"
+        },
+        "effectiveDateTime": "2026-02-14T22:15:00-05:00",
+        "valueQuantity": {
+          "value": 91,
+          "unit": "%",
+          "system": "http://unitsofmeasure.org",
+          "code": "%"
+        },
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "L",
+                "display": "Low"
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000206",
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8310-5",
+              "display": "Body temperature"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "encounter": {
+          "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000201"
+        },
+        "effectiveDateTime": "2026-02-14T22:15:00-05:00",
+        "valueQuantity": {
+          "value": 37.1,
+          "unit": "Cel",
+          "system": "http://unitsofmeasure.org",
+          "code": "Cel"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000207",
+      "resource": {
+        "resourceType": "Observation",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-blood-pressure"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "85354-9",
+              "display": "Blood pressure panel"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "encounter": {
+          "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000201"
+        },
+        "effectiveDateTime": "2026-02-14T22:15:00-05:00",
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "8480-6",
+                  "display": "Systolic blood pressure"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "value": 132,
+              "unit": "mmHg",
+              "system": "http://unitsofmeasure.org",
+              "code": "mm[Hg]"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "8462-4",
+                  "display": "Diastolic blood pressure"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "value": 84,
+              "unit": "mmHg",
+              "system": "http://unitsofmeasure.org",
+              "code": "mm[Hg]"
+            }
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000208",
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "1988-5",
+              "display": "C reactive protein [Mass/volume] in Serum or Plasma"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "encounter": {
+          "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000201"
+        },
+        "effectiveDateTime": "2026-02-14T23:00:00-05:00",
+        "valueQuantity": {
+          "value": 8.4,
+          "unit": "mg/L",
+          "system": "http://unitsofmeasure.org",
+          "code": "mg/L"
+        },
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "H",
+                "display": "High"
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000241",
+      "resource": {
+        "resourceType": "Composition",
+        "status": "final",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "11506-3",
+              "display": "Progress note"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "encounter": {
+          "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000201"
+        },
+        "date": "2026-02-15T01:30:00-05:00",
+        "author": [
+          {
+            "display": "ED Attending"
+          }
+        ],
+        "title": "Emergency Department Visit - Asthma Exacerbation",
+        "section": [
+          {
+            "title": "Subjective",
+            "text": {
+              "status": "generated",
+              "div": "<div xmlns='http://www.w3.org/1999/xhtml'>Patient presented with 2 days of progressive dyspnea, wheeze, and cough after an upper respiratory infection. Reports increased rescue inhaler use with minimal relief.</div>"
+            }
+          },
+          {
+            "title": "Objective",
+            "text": {
+              "status": "generated",
+              "div": "<div xmlns='http://www.w3.org/1999/xhtml'>VS: BP 132/84, HR 112, RR 26, SpO2 91% RA, Temp 37.1C. Diffuse expiratory wheeze bilaterally, accessory muscle use. CRP 8.4 mg/L (elevated).</div>"
+            }
+          },
+          {
+            "title": "Assessment",
+            "text": {
+              "status": "generated",
+              "div": "<div xmlns='http://www.w3.org/1999/xhtml'>Acute moderate-severe asthma exacerbation, likely viral trigger.</div>"
+            }
+          },
+          {
+            "title": "Plan",
+            "text": {
+              "status": "generated",
+              "div": "<div xmlns='http://www.w3.org/1999/xhtml'>Nebulized albuterol/ipratropium, supplemental O2, oral prednisone 40mg daily x5 days. Discharged after improvement to SpO2 96% RA. Instructed to follow up with pulmonology in 3 days.</div>"
+            }
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Composition"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000211",
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "AMB",
+          "display": "ambulatory"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "394701000",
+                "display": "Asthma follow-up (regime/therapy)"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "participant": [
+          {
+            "individual": {
+              "reference": "Practitioner/1011",
+              "display": "Dr. Linh Nguyen"
+            }
+          }
+        ],
+        "serviceProvider": {
+          "reference": "Organization/1010"
+        },
+        "period": {
+          "start": "2026-02-17T10:00:00-05:00",
+          "end": "2026-02-17T10:30:00-05:00"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Encounter"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000221",
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "1246315",
+              "display": "budesonide 0.08 MG/ACTUAT / formoterol fumarate 0.0045 MG/ACTUAT Metered Dose Inhaler [Symbicort]"
+            }
+          ],
+          "text": "Budesonide/Formoterol (Symbicort 80/4.5) - ICS/LABA step-up"
+        },
+        "subject": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "encounter": {
+          "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000211"
+        },
+        "authoredOn": "2026-02-17",
+        "requester": {
+          "reference": "Practitioner/1011"
+        },
+        "reasonReference": [
+          {
+            "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000102"
+          }
+        ],
+        "dosageInstruction": [
+          {
+            "text": "Inhale 2 puffs by mouth twice daily"
+          }
+        ],
+        "note": [
+          {
+            "text": "Stepped up from budesonide monotherapy after ED visit for exacerbation; discontinue prior ICS-only inhaler."
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "MedicationRequest"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000212",
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8867-4",
+              "display": "Heart rate"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "encounter": {
+          "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000211"
+        },
+        "effectiveDateTime": "2026-02-17T10:05:00-05:00",
+        "valueQuantity": {
+          "value": 80,
+          "unit": "/min",
+          "system": "http://unitsofmeasure.org",
+          "code": "/min"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000213",
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "9279-1",
+              "display": "Respiratory rate"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "encounter": {
+          "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000211"
+        },
+        "effectiveDateTime": "2026-02-17T10:05:00-05:00",
+        "valueQuantity": {
+          "value": 18,
+          "unit": "/min",
+          "system": "http://unitsofmeasure.org",
+          "code": "/min"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000214",
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "59408-5",
+              "display": "Oxygen saturation"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "encounter": {
+          "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000211"
+        },
+        "effectiveDateTime": "2026-02-17T10:05:00-05:00",
+        "valueQuantity": {
+          "value": 96,
+          "unit": "%",
+          "system": "http://unitsofmeasure.org",
+          "code": "%"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000215",
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8310-5",
+              "display": "Body temperature"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "encounter": {
+          "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000211"
+        },
+        "effectiveDateTime": "2026-02-17T10:05:00-05:00",
+        "valueQuantity": {
+          "value": 36.9,
+          "unit": "Cel",
+          "system": "http://unitsofmeasure.org",
+          "code": "Cel"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000216",
+      "resource": {
+        "resourceType": "Observation",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-blood-pressure"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "85354-9",
+              "display": "Blood pressure panel"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "encounter": {
+          "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000211"
+        },
+        "effectiveDateTime": "2026-02-17T10:05:00-05:00",
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "8480-6",
+                  "display": "Systolic blood pressure"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "value": 122,
+              "unit": "mmHg",
+              "system": "http://unitsofmeasure.org",
+              "code": "mm[Hg]"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "8462-4",
+                  "display": "Diastolic blood pressure"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "value": 78,
+              "unit": "mmHg",
+              "system": "http://unitsofmeasure.org",
+              "code": "mm[Hg]"
+            }
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000217",
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "29463-7",
+              "display": "Body weight"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "encounter": {
+          "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000211"
+        },
+        "effectiveDateTime": "2026-02-17T10:05:00-05:00",
+        "valueQuantity": {
+          "value": 71,
+          "unit": "kg",
+          "system": "http://unitsofmeasure.org",
+          "code": "kg"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000218",
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "20150-9",
+              "display": "FEV1"
+            }
+          ],
+          "text": "FEV1 (spirometry)"
+        },
+        "subject": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "encounter": {
+          "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000211"
+        },
+        "effectiveDateTime": "2026-02-17T10:15:00-05:00",
+        "valueQuantity": {
+          "value": 2.9,
+          "unit": "L",
+          "system": "http://unitsofmeasure.org",
+          "code": "L"
+        },
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "L",
+                "display": "Low"
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000226",
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "19870-5",
+              "display": "FVC"
+            }
+          ],
+          "text": "FVC (spirometry)"
+        },
+        "subject": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "encounter": {
+          "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000211"
+        },
+        "effectiveDateTime": "2026-02-17T10:15:00-05:00",
+        "valueQuantity": {
+          "value": 4.2,
+          "unit": "L",
+          "system": "http://unitsofmeasure.org",
+          "code": "L"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000219",
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "19926-5",
+              "display": "FEV1/FVC"
+            }
+          ],
+          "text": "FEV1/FVC ratio (spirometry)"
+        },
+        "subject": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "encounter": {
+          "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000211"
+        },
+        "effectiveDateTime": "2026-02-17T10:15:00-05:00",
+        "valueQuantity": {
+          "value": 69,
+          "unit": "%",
+          "system": "http://unitsofmeasure.org",
+          "code": "%"
+        },
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "L",
+                "display": "Low"
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000227",
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "33452-4",
+              "display": "Peak expiratory flow"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "encounter": {
+          "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000211"
+        },
+        "effectiveDateTime": "2026-02-17T10:15:00-05:00",
+        "valueQuantity": {
+          "value": 380,
+          "unit": "L/min",
+          "system": "http://unitsofmeasure.org",
+          "code": "L/min"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000228",
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "survey"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "82668-5",
+              "display": "Total score [ACT]"
+            }
+          ],
+          "text": "Asthma Control Test (ACT) score"
+        },
+        "subject": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "encounter": {
+          "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000211"
+        },
+        "effectiveDateTime": "2026-02-17T10:20:00-05:00",
+        "valueQuantity": {
+          "value": 14,
+          "unit": "{score}",
+          "system": "http://unitsofmeasure.org",
+          "code": "{score}"
+        },
+        "interpretation": [
+          {
+            "text": "Poorly controlled (score <20)"
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000230",
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0074",
+                "code": "PUL",
+                "display": "Pulmonary"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "text": "Pulmonary Function Test (Spirometry)"
+        },
+        "subject": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "encounter": {
+          "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000211"
+        },
+        "effectiveDateTime": "2026-02-17T10:15:00-05:00",
+        "issued": "2026-02-17T10:30:00-05:00",
+        "performer": [
+          {
+            "reference": "Practitioner/1011"
+          }
+        ],
+        "result": [
+          {
+            "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000218"
+          },
+          {
+            "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000226"
+          },
+          {
+            "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000219"
+          },
+          {
+            "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000227"
+          }
+        ],
+        "conclusion": "Mild-to-moderate airflow obstruction, FEV1 down 19% from baseline (3.6L to 2.9L). Consistent with recent exacerbation; recommend step-up therapy."
+      },
+      "request": {
+        "method": "POST",
+        "url": "DiagnosticReport"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000242",
+      "resource": {
+        "resourceType": "Composition",
+        "status": "final",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "11506-3",
+              "display": "Progress note"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "encounter": {
+          "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000211"
+        },
+        "date": "2026-02-17T10:30:00-05:00",
+        "author": [
+          {
+            "reference": "Practitioner/1011",
+            "display": "Dr. Linh Nguyen"
+          }
+        ],
+        "title": "Asthma Follow-up - Post-Exacerbation",
+        "section": [
+          {
+            "title": "Subjective",
+            "text": {
+              "status": "generated",
+              "div": "<div xmlns='http://www.w3.org/1999/xhtml'>Follow-up after ED visit 3 days ago for asthma exacerbation. Reports residual mild dyspnea on exertion and increased rescue inhaler use (4-5x/week). Admits inconsistent daily ICS use over preceding month.</div>"
+            }
+          },
+          {
+            "title": "Objective",
+            "text": {
+              "status": "generated",
+              "div": "<div xmlns='http://www.w3.org/1999/xhtml'>VS: BP 122/78, HR 80, RR 18, SpO2 96%, Temp 36.9C, Weight 71kg. Mild expiratory wheeze at end expiration. FEV1 2.9L (down from 3.6L baseline), FEV1/FVC 69%, PEF 380 L/min. ACT score 14 (poorly controlled).</div>"
+            }
+          },
+          {
+            "title": "Assessment",
+            "text": {
+              "status": "generated",
+              "div": "<div xmlns='http://www.w3.org/1999/xhtml'>Poorly controlled asthma with recent exacerbation; likely adherence-related. Pulmonary function declined from prior visit.</div>"
+            }
+          },
+          {
+            "title": "Plan",
+            "text": {
+              "status": "generated",
+              "div": "<div xmlns='http://www.w3.org/1999/xhtml'>Step up therapy to budesonide/formoterol (Symbicort) 80/4.5, 2 puffs BID; discontinue ICS monotherapy. Reinforced daily adherence importance. Continue albuterol PRN. Follow-up in 8-12 weeks or sooner if symptoms recur.</div>"
+            }
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Composition"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000301",
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "EMER",
+          "display": "emergency"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "183478001",
+                "display": "Emergency hospital admission for asthma (procedure)"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "period": {
+          "start": "2026-05-14T19:45:00-04:00",
+          "end": "2026-05-14T23:00:00-04:00"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Encounter"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000302",
+      "resource": {
+        "resourceType": "Condition",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-encounter-diagnosis"
+          ]
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "195949008",
+              "display": "Acute exacerbation of asthma"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "encounter": {
+          "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000301"
+        },
+        "onsetDateTime": "2026-05-14T19:45:00-04:00",
+        "abatementDateTime": "2026-05-16T09:30:00-04:00",
+        "recordedDate": "2026-05-14"
+      },
+      "request": {
+        "method": "POST",
+        "url": "Condition"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000320",
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "status": "completed",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "198145",
+              "display": "prednisone 10 MG Oral Tablet"
+            }
+          ],
+          "text": "Prednisone burst for asthma exacerbation"
+        },
+        "subject": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "encounter": {
+          "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000301"
+        },
+        "authoredOn": "2026-05-14",
+        "reasonReference": [
+          {
+            "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000302"
+          }
+        ],
+        "dosageInstruction": [
+          {
+            "text": "Take 4 tablets (40 mg) by mouth once daily for 5 days"
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "MedicationRequest"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000303",
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8867-4",
+              "display": "Heart rate"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "encounter": {
+          "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000301"
+        },
+        "effectiveDateTime": "2026-05-14T19:50:00-04:00",
+        "valueQuantity": {
+          "value": 118,
+          "unit": "/min",
+          "system": "http://unitsofmeasure.org",
+          "code": "/min"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000304",
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "9279-1",
+              "display": "Respiratory rate"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "encounter": {
+          "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000301"
+        },
+        "effectiveDateTime": "2026-05-14T19:50:00-04:00",
+        "valueQuantity": {
+          "value": 28,
+          "unit": "/min",
+          "system": "http://unitsofmeasure.org",
+          "code": "/min"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000305",
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "59408-5",
+              "display": "Oxygen saturation"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "encounter": {
+          "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000301"
+        },
+        "effectiveDateTime": "2026-05-14T19:50:00-04:00",
+        "valueQuantity": {
+          "value": 90,
+          "unit": "%",
+          "system": "http://unitsofmeasure.org",
+          "code": "%"
+        },
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "L",
+                "display": "Low"
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000306",
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8310-5",
+              "display": "Body temperature"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "encounter": {
+          "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000301"
+        },
+        "effectiveDateTime": "2026-05-14T19:50:00-04:00",
+        "valueQuantity": {
+          "value": 37.3,
+          "unit": "Cel",
+          "system": "http://unitsofmeasure.org",
+          "code": "Cel"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000307",
+      "resource": {
+        "resourceType": "Observation",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-blood-pressure"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "85354-9",
+              "display": "Blood pressure panel"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "encounter": {
+          "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000301"
+        },
+        "effectiveDateTime": "2026-05-14T19:50:00-04:00",
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "8480-6",
+                  "display": "Systolic blood pressure"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "value": 128,
+              "unit": "mmHg",
+              "system": "http://unitsofmeasure.org",
+              "code": "mm[Hg]"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "8462-4",
+                  "display": "Diastolic blood pressure"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "value": 82,
+              "unit": "mmHg",
+              "system": "http://unitsofmeasure.org",
+              "code": "mm[Hg]"
+            }
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000308",
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "1988-5",
+              "display": "C reactive protein [Mass/volume] in Serum or Plasma"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "encounter": {
+          "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000301"
+        },
+        "effectiveDateTime": "2026-05-14T20:30:00-04:00",
+        "valueQuantity": {
+          "value": 9.1,
+          "unit": "mg/L",
+          "system": "http://unitsofmeasure.org",
+          "code": "mg/L"
+        },
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "H",
+                "display": "High"
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000343",
+      "resource": {
+        "resourceType": "Composition",
+        "status": "final",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "11506-3",
+              "display": "Progress note"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "encounter": {
+          "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000301"
+        },
+        "date": "2026-05-14T23:00:00-04:00",
+        "author": [
+          {
+            "display": "ED Attending"
+          }
+        ],
+        "title": "Emergency Department Visit - Second Asthma Exacerbation",
+        "section": [
+          {
+            "title": "Subjective",
+            "text": {
+              "status": "generated",
+              "div": "<div xmlns='http://www.w3.org/1999/xhtml'>Patient presented with acute worsening dyspnea and wheeze over several hours despite increased rescue inhaler use. Second ED visit in 3 months.</div>"
+            }
+          },
+          {
+            "title": "Objective",
+            "text": {
+              "status": "generated",
+              "div": "<div xmlns='http://www.w3.org/1999/xhtml'>VS: BP 128/82, HR 118, RR 28, SpO2 90% RA, Temp 37.3C. Marked expiratory wheeze, prolonged expiratory phase. CRP 9.1 mg/L.</div>"
+            }
+          },
+          {
+            "title": "Assessment",
+            "text": {
+              "status": "generated",
+              "div": "<div xmlns='http://www.w3.org/1999/xhtml'>Recurrent acute asthma exacerbation despite recent step-up to ICS/LABA; concern for inadequate control or adherence.</div>"
+            }
+          },
+          {
+            "title": "Plan",
+            "text": {
+              "status": "generated",
+              "div": "<div xmlns='http://www.w3.org/1999/xhtml'>Nebulized bronchodilators, oral prednisone 40mg daily x5 days. Improved to SpO2 95% RA, discharged. Urgent pulmonology follow-up in 48 hours recommended.</div>"
+            }
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Composition"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000311",
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "AMB",
+          "display": "ambulatory"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "394701000",
+                "display": "Asthma follow-up (regime/therapy)"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "participant": [
+          {
+            "individual": {
+              "reference": "Practitioner/1011",
+              "display": "Dr. Linh Nguyen"
+            }
+          }
+        ],
+        "serviceProvider": {
+          "reference": "Organization/1010"
+        },
+        "period": {
+          "start": "2026-05-16T09:30:00-04:00",
+          "end": "2026-05-16T10:00:00-04:00"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Encounter"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000312",
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8867-4",
+              "display": "Heart rate"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "encounter": {
+          "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000311"
+        },
+        "effectiveDateTime": "2026-05-16T09:35:00-04:00",
+        "valueQuantity": {
+          "value": 84,
+          "unit": "/min",
+          "system": "http://unitsofmeasure.org",
+          "code": "/min"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000313",
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "9279-1",
+              "display": "Respiratory rate"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "encounter": {
+          "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000311"
+        },
+        "effectiveDateTime": "2026-05-16T09:35:00-04:00",
+        "valueQuantity": {
+          "value": 19,
+          "unit": "/min",
+          "system": "http://unitsofmeasure.org",
+          "code": "/min"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000314",
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "59408-5",
+              "display": "Oxygen saturation"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "encounter": {
+          "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000311"
+        },
+        "effectiveDateTime": "2026-05-16T09:35:00-04:00",
+        "valueQuantity": {
+          "value": 95,
+          "unit": "%",
+          "system": "http://unitsofmeasure.org",
+          "code": "%"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000315",
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8310-5",
+              "display": "Body temperature"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "encounter": {
+          "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000311"
+        },
+        "effectiveDateTime": "2026-05-16T09:35:00-04:00",
+        "valueQuantity": {
+          "value": 36.9,
+          "unit": "Cel",
+          "system": "http://unitsofmeasure.org",
+          "code": "Cel"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000316",
+      "resource": {
+        "resourceType": "Observation",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-blood-pressure"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "85354-9",
+              "display": "Blood pressure panel"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "encounter": {
+          "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000311"
+        },
+        "effectiveDateTime": "2026-05-16T09:35:00-04:00",
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "8480-6",
+                  "display": "Systolic blood pressure"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "value": 120,
+              "unit": "mmHg",
+              "system": "http://unitsofmeasure.org",
+              "code": "mm[Hg]"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "8462-4",
+                  "display": "Diastolic blood pressure"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "value": 76,
+              "unit": "mmHg",
+              "system": "http://unitsofmeasure.org",
+              "code": "mm[Hg]"
+            }
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000317",
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "29463-7",
+              "display": "Body weight"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "encounter": {
+          "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000311"
+        },
+        "effectiveDateTime": "2026-05-16T09:35:00-04:00",
+        "valueQuantity": {
+          "value": 73,
+          "unit": "kg",
+          "system": "http://unitsofmeasure.org",
+          "code": "kg"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000318",
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "20150-9",
+              "display": "FEV1"
+            }
+          ],
+          "text": "FEV1 (spirometry)"
+        },
+        "subject": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "encounter": {
+          "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000311"
+        },
+        "effectiveDateTime": "2026-05-16T09:45:00-04:00",
+        "valueQuantity": {
+          "value": 2.5,
+          "unit": "L",
+          "system": "http://unitsofmeasure.org",
+          "code": "L"
+        },
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "L",
+                "display": "Low"
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000326",
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "19870-5",
+              "display": "FVC"
+            }
+          ],
+          "text": "FVC (spirometry)"
+        },
+        "subject": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "encounter": {
+          "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000311"
+        },
+        "effectiveDateTime": "2026-05-16T09:45:00-04:00",
+        "valueQuantity": {
+          "value": 4.1,
+          "unit": "L",
+          "system": "http://unitsofmeasure.org",
+          "code": "L"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000319",
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "19926-5",
+              "display": "FEV1/FVC"
+            }
+          ],
+          "text": "FEV1/FVC ratio (spirometry)"
+        },
+        "subject": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "encounter": {
+          "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000311"
+        },
+        "effectiveDateTime": "2026-05-16T09:45:00-04:00",
+        "valueQuantity": {
+          "value": 61,
+          "unit": "%",
+          "system": "http://unitsofmeasure.org",
+          "code": "%"
+        },
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "L",
+                "display": "Low"
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000327",
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "33452-4",
+              "display": "Peak expiratory flow"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "encounter": {
+          "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000311"
+        },
+        "effectiveDateTime": "2026-05-16T09:45:00-04:00",
+        "valueQuantity": {
+          "value": 340,
+          "unit": "L/min",
+          "system": "http://unitsofmeasure.org",
+          "code": "L/min"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000328",
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "survey"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "82668-5",
+              "display": "Total score [ACT]"
+            }
+          ],
+          "text": "Asthma Control Test (ACT) score"
+        },
+        "subject": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "encounter": {
+          "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000311"
+        },
+        "effectiveDateTime": "2026-05-16T09:50:00-04:00",
+        "valueQuantity": {
+          "value": 12,
+          "unit": "{score}",
+          "system": "http://unitsofmeasure.org",
+          "code": "{score}"
+        },
+        "interpretation": [
+          {
+            "text": "Poorly controlled (score <20)"
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000330",
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0074",
+                "code": "PUL",
+                "display": "Pulmonary"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "text": "Pulmonary Function Test (Spirometry)"
+        },
+        "subject": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "encounter": {
+          "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000311"
+        },
+        "effectiveDateTime": "2026-05-16T09:45:00-04:00",
+        "issued": "2026-05-16T10:00:00-04:00",
+        "performer": [
+          {
+            "reference": "Practitioner/1011"
+          }
+        ],
+        "result": [
+          {
+            "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000318"
+          },
+          {
+            "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000326"
+          },
+          {
+            "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000319"
+          },
+          {
+            "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000327"
+          }
+        ],
+        "conclusion": "Further decline in FEV1 (2.5L, 69% of baseline) despite ICS/LABA therapy. Recurrent exacerbations suggest inadequate control; consider adherence review and add-on therapy."
+      },
+      "request": {
+        "method": "POST",
+        "url": "DiagnosticReport"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000344",
+      "resource": {
+        "resourceType": "Composition",
+        "status": "final",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "11506-3",
+              "display": "Progress note"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "encounter": {
+          "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000311"
+        },
+        "date": "2026-05-16T10:00:00-04:00",
+        "author": [
+          {
+            "reference": "Practitioner/1011",
+            "display": "Dr. Linh Nguyen"
+          }
+        ],
+        "title": "Asthma Follow-up - Post Second Exacerbation",
+        "section": [
+          {
+            "title": "Subjective",
+            "text": {
+              "status": "generated",
+              "div": "<div xmlns='http://www.w3.org/1999/xhtml'>Follow-up 2 days after second ED visit in 3 months. Patient admits to skipping evening Symbicort dose frequently, citing forgetfulness. Rescue inhaler use remains frequent.</div>"
+            }
+          },
+          {
+            "title": "Objective",
+            "text": {
+              "status": "generated",
+              "div": "<div xmlns='http://www.w3.org/1999/xhtml'>VS: BP 120/76, HR 84, RR 19, SpO2 95%, Weight 73kg. FEV1 2.5L, FEV1/FVC 61%, PEF 340 L/min. ACT score 12 (poorly controlled).</div>"
+            }
+          },
+          {
+            "title": "Assessment",
+            "text": {
+              "status": "generated",
+              "div": "<div xmlns='http://www.w3.org/1999/xhtml'>Poorly controlled asthma with two ED visits in the past 6 months and progressive decline in pulmonary function despite ICS/LABA. Adherence remains a significant concern.</div>"
+            }
+          },
+          {
+            "title": "Plan",
+            "text": {
+              "status": "generated",
+              "div": "<div xmlns='http://www.w3.org/1999/xhtml'>Intensive adherence counseling, consider adherence-monitoring inhaler. Continue Symbicort 80/4.5 BID and albuterol PRN. Recheck spirometry and ACT at next visit in 8 weeks.</div>"
+            }
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Composition"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000401",
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "in-progress",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "AMB",
+          "display": "ambulatory"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "394701000",
+                "display": "Asthma follow-up (regime/therapy)"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "participant": [
+          {
+            "individual": {
+              "reference": "Practitioner/1011",
+              "display": "Dr. Linh Nguyen"
+            }
+          }
+        ],
+        "serviceProvider": {
+          "reference": "Organization/1010"
+        },
+        "period": {
+          "start": "2026-07-14T10:00:00-04:00"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Encounter"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000402",
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8867-4",
+              "display": "Heart rate"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "encounter": {
+          "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000401"
+        },
+        "effectiveDateTime": "2026-07-14T10:05:00-04:00",
+        "valueQuantity": {
+          "value": 86,
+          "unit": "/min",
+          "system": "http://unitsofmeasure.org",
+          "code": "/min"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000403",
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "9279-1",
+              "display": "Respiratory rate"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "encounter": {
+          "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000401"
+        },
+        "effectiveDateTime": "2026-07-14T10:05:00-04:00",
+        "valueQuantity": {
+          "value": 18,
+          "unit": "/min",
+          "system": "http://unitsofmeasure.org",
+          "code": "/min"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000404",
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "59408-5",
+              "display": "Oxygen saturation"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "encounter": {
+          "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000401"
+        },
+        "effectiveDateTime": "2026-07-14T10:05:00-04:00",
+        "valueQuantity": {
+          "value": 96,
+          "unit": "%",
+          "system": "http://unitsofmeasure.org",
+          "code": "%"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000405",
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8310-5",
+              "display": "Body temperature"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "encounter": {
+          "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000401"
+        },
+        "effectiveDateTime": "2026-07-14T10:05:00-04:00",
+        "valueQuantity": {
+          "value": 36.8,
+          "unit": "Cel",
+          "system": "http://unitsofmeasure.org",
+          "code": "Cel"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000406",
+      "resource": {
+        "resourceType": "Observation",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-blood-pressure"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "85354-9",
+              "display": "Blood pressure panel"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "encounter": {
+          "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000401"
+        },
+        "effectiveDateTime": "2026-07-14T10:05:00-04:00",
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "8480-6",
+                  "display": "Systolic blood pressure"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "value": 122,
+              "unit": "mmHg",
+              "system": "http://unitsofmeasure.org",
+              "code": "mm[Hg]"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "8462-4",
+                  "display": "Diastolic blood pressure"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "value": 78,
+              "unit": "mmHg",
+              "system": "http://unitsofmeasure.org",
+              "code": "mm[Hg]"
+            }
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000407",
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "29463-7",
+              "display": "Body weight"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "encounter": {
+          "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000401"
+        },
+        "effectiveDateTime": "2026-07-14T10:05:00-04:00",
+        "valueQuantity": {
+          "value": 74,
+          "unit": "kg",
+          "system": "http://unitsofmeasure.org",
+          "code": "kg"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000408",
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8302-2",
+              "display": "Body height"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "encounter": {
+          "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000401"
+        },
+        "effectiveDateTime": "2026-07-14T10:05:00-04:00",
+        "valueQuantity": {
+          "value": 175,
+          "unit": "cm",
+          "system": "http://unitsofmeasure.org",
+          "code": "cm"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000409",
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "39156-5",
+              "display": "Body mass index (BMI)"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "encounter": {
+          "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000401"
+        },
+        "effectiveDateTime": "2026-07-14T10:05:00-04:00",
+        "valueQuantity": {
+          "value": 24.2,
+          "unit": "kg/m2",
+          "system": "http://unitsofmeasure.org",
+          "code": "kg/m2"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000410",
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "20150-9",
+              "display": "FEV1"
+            }
+          ],
+          "text": "FEV1 (spirometry)"
+        },
+        "subject": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "encounter": {
+          "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000401"
+        },
+        "effectiveDateTime": "2026-07-14T10:15:00-04:00",
+        "valueQuantity": {
+          "value": 2.6,
+          "unit": "L",
+          "system": "http://unitsofmeasure.org",
+          "code": "L"
+        },
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "L",
+                "display": "Low"
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000426",
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "19870-5",
+              "display": "FVC"
+            }
+          ],
+          "text": "FVC (spirometry)"
+        },
+        "subject": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "encounter": {
+          "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000401"
+        },
+        "effectiveDateTime": "2026-07-14T10:15:00-04:00",
+        "valueQuantity": {
+          "value": 4.1,
+          "unit": "L",
+          "system": "http://unitsofmeasure.org",
+          "code": "L"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000411",
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "19926-5",
+              "display": "FEV1/FVC"
+            }
+          ],
+          "text": "FEV1/FVC ratio (spirometry)"
+        },
+        "subject": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "encounter": {
+          "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000401"
+        },
+        "effectiveDateTime": "2026-07-14T10:15:00-04:00",
+        "valueQuantity": {
+          "value": 63,
+          "unit": "%",
+          "system": "http://unitsofmeasure.org",
+          "code": "%"
+        },
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "L",
+                "display": "Low"
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000427",
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "33452-4",
+              "display": "Peak expiratory flow"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "encounter": {
+          "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000401"
+        },
+        "effectiveDateTime": "2026-07-14T10:15:00-04:00",
+        "valueQuantity": {
+          "value": 355,
+          "unit": "L/min",
+          "system": "http://unitsofmeasure.org",
+          "code": "L/min"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000428",
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "survey"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "82668-5",
+              "display": "Total score [ACT]"
+            }
+          ],
+          "text": "Asthma Control Test (ACT) score"
+        },
+        "subject": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "encounter": {
+          "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000401"
+        },
+        "effectiveDateTime": "2026-07-14T10:20:00-04:00",
+        "valueQuantity": {
+          "value": 18,
+          "unit": "{score}",
+          "system": "http://unitsofmeasure.org",
+          "code": "{score}"
+        },
+        "interpretation": [
+          {
+            "text": "Not well controlled (score <20), improving"
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000412",
+      "resource": {
+        "resourceType": "Observation",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-smokingstatus"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "social-history"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "72166-2",
+              "display": "Tobacco smoking status"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "encounter": {
+          "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000401"
+        },
+        "effectiveDateTime": "2026-07-14T10:05:00-04:00",
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "266919005",
+              "display": "Never smoked tobacco (finding)"
+            }
+          ]
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000429",
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "711-2",
+              "display": "Eosinophils [#/volume] in Blood by Automated count"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "encounter": {
+          "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000401"
+        },
+        "effectiveDateTime": "2026-07-14T10:25:00-04:00",
+        "valueQuantity": {
+          "value": 420,
+          "unit": "/uL",
+          "system": "http://unitsofmeasure.org",
+          "code": "/uL"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000430",
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0074",
+                "code": "PUL",
+                "display": "Pulmonary"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "text": "Pulmonary Function Test (Spirometry)"
+        },
+        "subject": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "encounter": {
+          "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000401"
+        },
+        "effectiveDateTime": "2026-07-14T10:15:00-04:00",
+        "issued": "2026-07-14T10:30:00-04:00",
+        "performer": [
+          {
+            "reference": "Practitioner/1011"
+          }
+        ],
+        "result": [
+          {
+            "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000410"
+          },
+          {
+            "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000426"
+          },
+          {
+            "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000411"
+          },
+          {
+            "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000427"
+          }
+        ],
+        "conclusion": "Slight improvement in FEV1 (2.6L vs 2.5L last visit) but remains 28% below personal baseline. Persistent airflow obstruction despite ICS/LABA; adherence and add-on therapy to be reassessed."
+      },
+      "request": {
+        "method": "POST",
+        "url": "DiagnosticReport"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000445",
+      "resource": {
+        "resourceType": "Composition",
+        "status": "final",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "11506-3",
+              "display": "Progress note"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "encounter": {
+          "reference": "urn:uuid:de0a1000-1000-4a11-8a11-000000000401"
+        },
+        "date": "2026-07-14T10:30:00-04:00",
+        "author": [
+          {
+            "reference": "Practitioner/1011",
+            "display": "Dr. Linh Nguyen"
+          }
+        ],
+        "title": "Asthma Follow-up - Routine Visit",
+        "section": [
+          {
+            "title": "Subjective",
+            "text": {
+              "status": "generated",
+              "div": "<div xmlns='http://www.w3.org/1999/xhtml'>Patient reports improved adherence to Symbicort using a phone reminder. Rescue inhaler use down to 1-2x/week. No ED visits since last follow-up.</div>"
+            }
+          },
+          {
+            "title": "Objective",
+            "text": {
+              "status": "generated",
+              "div": "<div xmlns='http://www.w3.org/1999/xhtml'>VS: BP 122/78, HR 86, RR 18, SpO2 96%, Weight 74kg, BMI 24.2. FEV1 2.6L (up slightly from 2.5L), FEV1/FVC 63%, PEF 355 L/min. ACT score 18 (improving, not yet well controlled). Eosinophils 420/uL.</div>"
+            }
+          },
+          {
+            "title": "Assessment",
+            "text": {
+              "status": "generated",
+              "div": "<div xmlns='http://www.w3.org/1999/xhtml'>Asthma control improving with better adherence, but pulmonary function remains well below baseline (72% of pre-exacerbation FEV1). No further ED visits since step-up therapy and adherence counseling.</div>"
+            }
+          },
+          {
+            "title": "Plan",
+            "text": {
+              "status": "generated",
+              "div": "<div xmlns='http://www.w3.org/1999/xhtml'>Continue Symbicort 80/4.5 BID and albuterol PRN. Reassess in 8 weeks; if ACT remains &lt;20 and FEV1 does not improve further, consider biologic work-up (IgE, eosinophil-directed therapy).</div>"
+            }
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Composition"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:de0a1000-1000-4a11-8a11-000000000501",
+      "resource": {
+        "resourceType": "AllergyIntolerance",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          "medication"
+        ],
+        "criticality": "low",
+        "code": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "7980",
+              "display": "Penicillin G"
+            }
+          ],
+          "text": "Penicillin"
+        },
+        "patient": {
+          "reference": "Patient/4f083ce3-f12b-bb4b-7353-e17f0cd55b0a"
+        },
+        "recordedDate": "2015-01-01",
+        "reaction": [
+          {
+            "manifestation": [
+              {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "247472004",
+                    "display": "Hives"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "AllergyIntolerance"
+      }
+    }
+  ]
+}
