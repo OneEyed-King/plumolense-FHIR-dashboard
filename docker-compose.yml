@@ -12,6 +12,10 @@ services:
       SPRING_DATASOURCE_DRIVER_CLASS_NAME: "org.postgresql.Driver"
       HIBERNATE_DIALECT: ca.uhn.fhir.jpa.model.dialect.HapiFhirPostgresDialect
       HAPI_FHIR_CORS_ALLOWED_ORIGIN: "*"
+      # Our fixture bundles use fixed client-assigned IDs (e.g. Organization/1010,
+      # Practitioner/1011) for reproducibility across fresh servers. HAPI's default
+      # (ALPHANUMERIC) rejects purely-numeric client IDs, so allow any format.
+      HAPI_FHIR_CLIENT_ID_STRATEGY: "ANY"
     depends_on:
       hapi-fhir-postgres:
         condition: service_healthy
