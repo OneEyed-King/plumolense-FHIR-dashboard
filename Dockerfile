@@ -19,7 +19,8 @@ WORKDIR /app
 ENV NODE_ENV=production
 ENV NEXT_TELEMETRY_DISABLED=1
 
-COPY --from=builder /app/public ./public
+# This app has no /public directory (no static assets checked in), so it's
+# intentionally not copied here - add it back if one is introduced later.
 COPY --from=builder /app/.next/standalone ./
 COPY --from=builder /app/.next/static ./.next/static
 
